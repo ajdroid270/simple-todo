@@ -1,14 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import TodoItem from "./Todo/Item";
+
+const shoppinglist = [
+  { title: "ambica", bought: true },
+  { title: "apple", bought: false },
+  { title: "trijay", bought: true },
+  { title: "ajay", bought: false },
+];
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
+        <div>
+          {/* {names.map(function (personname, i) {
+            return <MyName name={personname} age={ages[i]} />;
+          })} */}
+          {shoppinglist.map(function (shoppingItem) {
+            return <TodoItem item={shoppingItem} />;
+          })}
+        </div>
         <a
           className="App-link"
           href="https://reactjs.org"
